@@ -7,22 +7,27 @@
 
 int main()
 {
-    int contin_O = 0, score = 0;
-    char str[100];
-    scanf("%s", str);
-    for(int i = 0; i < strlen(str); i++)
+    int line = 0;
+    scanf("%d", &line);
+    while(line--)
     {
-        if(str[i] == 'O')
+        int contin_O = 0, score = 0;
+        char str[100];
+        scanf("%s", str);
+        for(int i = 0; i < strlen(str); i++)
         {
-            score += (contin_O + 1);
-            contin_O++;
-        } else if(str[i] == 'X')
-        {
-            contin_O = 0;
-        } else {
-            printf("error\n"); // for debug
+            if(str[i] == 'O')
+            {
+                score += (contin_O + 1);
+                contin_O++; 
+            } else if(str[i] == 'X')
+            {
+                contin_O = 0;
+            } else {
+                printf("error\n"); // for debug
+            }
         }
+        printf("%d\n", score);
     }
-    printf("%d\n", score);
     return 0;
 }
