@@ -1,6 +1,6 @@
 # .c/.cpp --> .i --> .s --> .o --> a.out
 
-.i
-.s
-.o
-.out
+*.i
+*.s
+*.o
+*.out
