@@ -7,5 +7,5 @@
 2. 在编译时，
 // 定义了LOCAL，freopen会被编译
 gcc file.c -D LOCAL
-// freopen被忽略
+// 未定义LOCAL，freopen会被忽略
 gcc file.c
