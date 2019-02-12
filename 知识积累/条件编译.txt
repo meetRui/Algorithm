@@ -1,0 +1,11 @@
+1. 在.c文件中，main函数开头，添加
+#ifdef LOCAL
+    freopen("data.in", "r", stdin);
+    freopen("data.out", "w", stdout);
+#endif
+
+2. 在编译时，
+// 若定义了LOCAL，freopen会被编译
+gcc file.c -D LOCAL
+// 若未定义LOCAL，freopen会被忽略
+gcc file.c
