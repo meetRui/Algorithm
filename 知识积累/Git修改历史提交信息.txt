@@ -1,0 +1,23 @@
+如果Git提交的时候，信息写错了，想改正，该怎么办？
+
+git log --oneline 显示的信息如下：
+* hash_code-1  (HEAD->master) right message
+* hash_code-2  ERROR message
+* hash_code-3  other message
+...
+
+
+若没有git push，可以如下操作：
+// 在弹出的窗口中，会以Vim浏览模式显示最近两次的提交信息，注意是倒序
+1. git rebase -i hash_code-3
+
+// 2～3步需要一点Vim知识
+2. 按i键，进入编辑模式，将要修改的提交前的pick改为reword，按esc键，输入:wq，按回车
+3. 在弹出的的窗口中，按i键，就可以修改提交信息了。修改完成后，按esc键，输入:wq，按回车；
+若在第2步中修改了多个pick为reword，则会多次弹出修改界面。
+
+// 查看修改是否已经完成
+4. git log --oneline
+
+// 现在可以愉快地推送了
+5. git push
