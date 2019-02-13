@@ -1,0 +1,27 @@
+比如有个可执行程序gdb，我想统计该程序的执行时间，可以使用time命令
+
+执行
+time ./gdb
+执行结果如下
+real	1m51.804s
+user	1m46.702s
+sys	0m4.150s
+
+解释
+1. real time       从命令行开始执行到运行终止的总时间
+2. user CPU time   在用户态中执行的时间总和
+3. system CPU time 在核心态中执行的时间总和
+
+执行
+time -p ./gdb
+执行结果如下
+real 115.92
+user 108.62
+sys 5.11
+
+执行
+type -a time
+结果
+time is a shell keyword
+time is /usr/bin/time
+这说明系统里有两个time
